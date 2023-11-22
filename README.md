@@ -12,6 +12,8 @@ may also be possible if you have ideas on how to substantially extend a given to
 - [Master Theses Topics](#master-theses-topics)
   - [Improving the Tracy Profiler for Distributed Memory Applications](#improving-the-tracy-profiler-for-distributed-memory-applications)
   - [A Clang/LLVM Compiler Plugin to Improve the User Experience in SYCL and Celerity](#a-clangllvm-compiler-plugin-to-improve-the-user-experience-in-sycl-and-celerity)
+  - [SimSYCL: A SYCL Implementation for Development, Testing and Simulation](#simsycl-a-sycl-implementation-for-development-testing-and-simulation)
+  - [Extending Sylkan with Local Storage Support](#extending-sylkan-with-local-storage-support)
 
 # Bachelor Theses Topics
 
@@ -83,9 +85,53 @@ at the library level, which Celerity attempts (e.g. warnings about specific type
 however, others require more static analysis.
 
 *Examples*:
-* Mismatches 
+* Mismatches between the specified access mode of buffers and the actual accesses performed
+* Detect invalid reference captures in host command groups
 
 **Prerequisites**:
 * Solid C and C++ knowledge
-* An understanding of the basics of application profiling
-* Some experience with distributed memory programming (i.e. HPC)
+* Some experience with compiler development is advantageous
+
+
+## SimSYCL: A SYCL Implementation for Development, Testing and Simulation
+
+The Khronos [SYCL API](https://www.khronos.org/sycl) has several implementations, but they
+are primarily designed for high performance on specific hardware. They often require heavy
+compilation infrastructure, which increases development times, and their performance focus
+can make debugging harder.
+
+The goal of this thesis is to design and develop a SYCL implementation which is focused on
+fast compilation, development and testing. It should function as a library-only,
+single-threaded implementation of the SYCL standard with minimal dependencies.
+Additional features designed for these use cases should be provided, such as the ability to 
+simulate executing the program on hardware devices with different properties for functional
+(but not performance) testing.
+
+Additionally, the compile times and capabilities of the developed implementation should be
+evaluated on a set of standard SYCL code bases.
+
+**Prerequisites**:
+* Solid C++ knowledge
+* Some prior understanding of GPU/accelerator computing is advantageous, but not strictly necessary
+
+
+## Extending Sylkan with Local Storage Support
+
+[Sylkan](https://dl.acm.org/doi/10.1145/3456669.3456683) is a prototype implementation of the
+Khronos [SYCL API](https://www.khronos.org/sycl) targeting any device which supports 
+[Vulkan](https://www.vulkan.org/) compute.
+
+The goal of this thesis is to update Sylkan towards newer versions of the SYCL standard,
+while also developing support for a variety of missing features. The most important of these
+is local storage, which should be mapped to the equivalent Vulkan features.
+
+A comprehensive evaluation across several different target hardware platforms should also be
+performed, with a particular focus on comparing the performance to existing SYCL implementations
+on platforms which support both Vulkan and other SYCL backends.
+
+Development and testing infrastructure will be made available by the DPS group.
+
+**Prerequisites**:
+* Solid C++ knowledge
+* Some prior understanding of GPU/accelerator computing is advantageous
+* Some experience with compiler development is advantageous
