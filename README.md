@@ -14,6 +14,7 @@ may also be possible if you have ideas on how to substantially extend a given to
   - [A Clang/LLVM Compiler Plugin to Improve the User Experience in SYCL and Celerity](#a-clangllvm-compiler-plugin-to-improve-the-user-experience-in-sycl-and-celerity)
   - [SimSYCL: A SYCL Implementation for Development, Testing and Simulation](#simsycl-a-sycl-implementation-for-development-testing-and-simulation)
   - [Extending Sylkan with Local Storage Support](#extending-sylkan-with-local-storage-support)
+  - [Static Analysis of SYCL Compute Kernels to Determine Data Access Mapping Functors](#static-analysis-of-sycl-compute-kernels-to-determine-data-access-mapping-functors)
 
 # Bachelor Theses Topics
 
@@ -134,4 +135,23 @@ Development and testing infrastructure will be made available by the DPS group.
 **Prerequisites**:
 * Solid C++ knowledge
 * Some prior understanding of GPU/accelerator computing is advantageous
+* Some experience with compiler development is advantageous
+
+
+## Static Analysis of SYCL Compute Kernels to Determine Data Access Mapping Functors
+
+In the [Celerity](https://celerity.github.io) system, programmers are required to specify
+the data dependencies of compute kernels via a mechanism known as
+[Range Mappers](https://celerity.github.io/docs/range-mappers). While some higher-level
+abstractions exist to simplify this task, it still, in principle, represents a duplication of
+information which already exists within the computation itself -- and like any such duplication,
+it introduces a productivity overhead in development and maintenance.
+
+The goal of this thesis is to research, design and implement an algorithm which statically
+analyzes kernels, and implicitly derives the required range mappers from this analysis.
+Note that the expectation is that this will only be possible for a subset of kernels fulfilling
+certain regularity criteria.
+
+**Prerequisites**:
+* Solid C and C++ knowledge
 * Some experience with compiler development is advantageous
