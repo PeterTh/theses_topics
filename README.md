@@ -6,10 +6,11 @@ Contact me if you are interested in any of these.
 for sufficiently motivated bachelor students to attempt theses at the Master level. The opposite
 may also be possible if you have ideas on how to substantially extend a given topic.
 
-- [Bachelor Theses Topics](#bachelor-theses-topics)
+- [Bachelor Thesis Topics](#bachelor-thesis-topics)
   - [Intel Level-0 Backend for Celerity](#intel-level-0-backend-for-celerity)
   - [AMD ROCM Backend for Celerity](#amd-rocm-backend-for-celerity)
-- [Master Theses Topics](#master-theses-topics)
+  - [A CUDA Interoperability API for Celerity](#a-cuda-interoperability-api-for-celerity)
+- [Master Thesis Topics](#master-thesis-topics)
   - [Improving the Tracy Profiler for Distributed Memory Applications](#improving-the-tracy-profiler-for-distributed-memory-applications)
   - [A Clang/LLVM Compiler Plugin to Improve the User Experience in SYCL and Celerity](#a-clangllvm-compiler-plugin-to-improve-the-user-experience-in-sycl-and-celerity)
   - [SimSYCL: A SYCL Implementation for Development, Testing and Simulation](#simsycl-a-sycl-implementation-for-development-testing-and-simulation)
