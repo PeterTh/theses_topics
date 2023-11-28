@@ -16,7 +16,7 @@ may also be possible if you have ideas on how to substantially extend a given to
   - [Extending Sylkan with Local Storage Support](#extending-sylkan-with-local-storage-support)
   - [Static Analysis of SYCL Compute Kernels to Determine Data Access Mapping Functors](#static-analysis-of-sycl-compute-kernels-to-determine-data-access-mapping-functors)
 
-# Bachelor Theses Topics
+# Bachelor Thesis Topics
 
 ## Intel Level-0 Backend for Celerity
 
@@ -54,7 +54,28 @@ Development and testing infrastructure will be made available by the DPS group.
 * Some prior understanding of GPU/accelerator computing is advantageous, but not strictly necessary
 
 
-# Master Theses Topics
+## A CUDA Interoperability API for Celerity
+
+[Celerity](https://celerity.github.io) is a C++ API and runtime system for programming multi-GPU
+applications, primarily for GPU clusters. It is based closely on the industry-standard Khronos
+[SYCL API](https://www.khronos.org/sycl).
+
+SYCL features an [interoperability API](https://www.oneapi.io/blog/sycl-interoperability-a-deep-dive-into-bridging-cuda-and-oneapi)
+which enables calling an underlying, usually more hardware- or vendor-specific API (such as CUDA)
+from a SYCL program. Celerity does not currently feature a similar API.
+
+The goal of this thesis is to identify the additional requirements for an effective interoperability
+API in the Celerity case (where the runtime system controls data placement), define this API, and provide
+an implementation for CUDA. The project should be evaluated on a set of test codes which call
+various common third party APIs (e.g. CuBLAS) from whithin a Celerity program.
+
+**Prerequisites**:
+* Solid C++ knowledge
+* Some prior understanding of GPU/accelerator computing or CUDA is advantageous, but not strictly necessary
+
+
+
+# Master Thesis Topics
 
 ## Improving the Tracy Profiler for Distributed Memory Applications
 
