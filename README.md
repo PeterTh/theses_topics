@@ -10,10 +10,10 @@ may also be possible if you have ideas on how to substantially extend a given to
   - [Intel Level-0 Backend for Celerity](#intel-level-0-backend-for-celerity)
   - [AMD ROCM Backend for Celerity](#amd-rocm-backend-for-celerity)
   - [A CUDA Interoperability API for Celerity](#a-cuda-interoperability-api-for-celerity)
+  - [SimSYCL: A SYCL Implementation for Development, Testing and Simulation](#simsycl-a-sycl-implementation-for-development-testing-and-simulation)
 - [Master Thesis Topics](#master-thesis-topics)
   - [Improving the Tracy Profiler for Distributed Memory Applications](#improving-the-tracy-profiler-for-distributed-memory-applications)
   - [A Clang/LLVM Compiler Plugin to Improve the User Experience in SYCL and Celerity](#a-clangllvm-compiler-plugin-to-improve-the-user-experience-in-sycl-and-celerity)
-  - [SimSYCL: A SYCL Implementation for Development, Testing and Simulation](#simsycl-a-sycl-implementation-for-development-testing-and-simulation)
   - [Extending Sylkan with Local Storage Support](#extending-sylkan-with-local-storage-support)
   - [Static Analysis of SYCL Compute Kernels to Determine Data Access Mapping Functors](#static-analysis-of-sycl-compute-kernels-to-determine-data-access-mapping-functors)
 
@@ -75,6 +75,23 @@ various common third party APIs (e.g. CuBLAS) from whithin a Celerity program.
 * Some prior understanding of GPU/accelerator computing or CUDA is advantageous, but not strictly necessary
 
 
+## SimSYCL: A SYCL Implementation for Development, Testing and Simulation
+
+The Khronos [SYCL API](https://www.khronos.org/sycl) has several implementations, but they
+are primarily designed for high performance on specific hardware. They often require heavy
+compilation infrastructure, which increases development times, and their performance focus
+can make debugging harder. [SimSYCL](https://github.com/celerity/SimSYCL) is focused on
+fast compilation, development and testing. It functions as a library-only,
+single-threaded implementation of the SYCL standard with minimal dependencies.
+
+The goal of this thesis is to extend the SYCL standard coverage of SimSYCL, and implement
+additional features to support development use cases. The specific features can be discussed
+in person.
+
+**Prerequisites**:
+* Solid C++ knowledge
+* Some prior understanding of GPU/accelerator computing is advantageous, but not strictly necessary
+
 
 # Master Thesis Topics
 
@@ -114,28 +131,6 @@ however, others require more static analysis.
 **Prerequisites**:
 * Solid C and C++ knowledge
 * Some experience with compiler development is advantageous
-
-
-## SimSYCL: A SYCL Implementation for Development, Testing and Simulation
-
-The Khronos [SYCL API](https://www.khronos.org/sycl) has several implementations, but they
-are primarily designed for high performance on specific hardware. They often require heavy
-compilation infrastructure, which increases development times, and their performance focus
-can make debugging harder.
-
-The goal of this thesis is to design and develop a SYCL implementation which is focused on
-fast compilation, development and testing. It should function as a library-only,
-single-threaded implementation of the SYCL standard with minimal dependencies.
-Additional features designed for these use cases should be provided, such as the ability to 
-simulate executing the program on hardware devices with different properties for functional
-(but not performance) testing.
-
-Additionally, the compile times and capabilities of the developed implementation should be
-evaluated on a set of standard SYCL code bases.
-
-**Prerequisites**:
-* Solid C++ knowledge
-* Some prior understanding of GPU/accelerator computing is advantageous, but not strictly necessary
 
 
 ## Extending Sylkan with Local Storage Support
